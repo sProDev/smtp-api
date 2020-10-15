@@ -5,8 +5,6 @@ Private SMTP API using NodeJS and Nodemailer module.
 #### Requirements
 - [NodeJS (and npm)](https://nodejs.org/en/)
 - [Vercel CLI](https://vercel.com/download)
-- [Express](https://expressjs.com/)
-- [Nodemailer](https://nodemailer.com/about/)
 
 #### References
 - [Express Documentation](http://expressjs.com/en/starter/hello-world.html)
