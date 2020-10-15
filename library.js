@@ -1,21 +1,21 @@
 'use strict';
 
 require('dotenv').config();
-const nodemailer = require('nodemailer');
-const helper = require('./helper');
+var nodemailer = require('nodemailer'),
+    helper = require('./helper');
 
 var transport = nodemailer.createTransport({
     host: process.env.SMTP_HOST,
     port: process.env.SMTP_PORT,
     auth: {
-      user: process.env.SMTP_USER,
-      pass: process.env.SMTP_PASS,
+        user: process.env.SMTP_USER,
+        pass: process.env.SMTP_PASS,
     },
 });
 
 exports.smtp = async (from, to, subject, text = '', html = '', attachment = {}) => {
     return new Promise(async (resolve, reject) => {
-        
+
         var message = {
             from: from,
             to: to,
@@ -37,9 +37,9 @@ exports.smtp = async (from, to, subject, text = '', html = '', attachment = {}) 
 
         transport.sendMail(message, function(err, info) {
             if (err) {
-              reject(err);
+                reject(err);
             } else {
-              resolve(info);
+                resolve(info);
             }
         });
 

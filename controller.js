@@ -1,8 +1,8 @@
 'use strict';
 
 require('dotenv').config();
-const library = require('./library');
-const response = require('./res');
+var library = require('./library'),
+    response = require('./res');
 
 exports.index = async (req, res) => {
     var apikey = req.query.apikey;
@@ -19,13 +19,13 @@ exports.index = async (req, res) => {
         if (filename && fileurl) {
             filename = decodeURIComponent(filename);
             fileurl = decodeURIComponent(fileurl);
-            
+
             attachment = {
                 filename: filename,
                 fileurl: fileurl,
             };
         }
-        
+
         if (from && to && subject && (text || html)) {
             from = decodeURIComponent(from);
             to = decodeURIComponent(to);
@@ -41,9 +41,9 @@ exports.index = async (req, res) => {
                     response.disapprove(error, res);
                 });
         } else {
-            response.disapprove('Bad request', res);
+            response.disapprove("Invalid request. Missing the 'from', 'to', 'subject', 'text' or 'html' parameter.", res);
         }
     } else {
-        response.disapprove('Forbidden', res);
+        response.disapprove('You must use an API key to authenticate each request to the Private SMTP API. For additional information, please refer to https://github.com/sProDev/smtp-api', res);
     }
 };
