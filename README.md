@@ -25,7 +25,7 @@ Private SMTP API using NodeJS and Nodemailer module.
     ```
     npm install
     ```
-4. Rename the ```example.env``` file to ```.env``` and adjust it to your SMTP server configuration, don't forget to adjust the APIKEY (it's up to you).
+4. Rename ```example.env``` to an ```.env``` file then adjust it to your SMTP server configuration, don't forget to also go to the APIKEY section (it's up to you, make sure it's confidential).
 5. Run the server (locally)
     
     - Development mode
