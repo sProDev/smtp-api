@@ -83,5 +83,5 @@ Example:
 ### Global
 [![ko-fi](https://www.ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/sProDev)
 ### Indonesia
-- [Trakteer](https://trakteer.id/sproDev)
+- [Trakteer](https://trakteer.id/sProDev)
 - [Saweria](https://saweria.co/sProDev)
