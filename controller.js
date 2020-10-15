@@ -6,7 +6,7 @@ const response = require('./res');
 
 exports.index = async (req, res) => {
     var apikey = req.query.apikey;
-    if (apikey) {
+    if (apikey === process.env.APIKEY) {
         var from = req.query.from,
             to = req.query.to,
             subject = req.query.subject,
