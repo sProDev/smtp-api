@@ -21,7 +21,7 @@ exports.smtp = async (from, to, subject, text = '', html = '', attachment = {}) 
             to: to,
             subject: subject,
         };
-        if (!text.trim()) {
+        if (html) {
             message.html = html;
         } else {
             message.text = text;
