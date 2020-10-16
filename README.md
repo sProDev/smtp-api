@@ -35,10 +35,10 @@ Private SMTP API using NodeJS and Nodemailer module.
         npm run start
         ```
 
-### Query string
+### Query string & Request Body
 
-> **All values entered into the query string must be uri encoded**
-- **Existing query string**
+> **All values of passed parameters (especially GET) must be uri encoded**
+- **Existing parameters**
     - ```apikey```
     - ```from```
     - ```to```
@@ -47,7 +47,7 @@ Private SMTP API using NodeJS and Nodemailer module.
     - ```html```
     - ```filename```
     - ```fileurl```
-- **Required query string**
+- **Required parameters**
     - ```apikey```
     - ```from```
     - ```to```
