@@ -5,15 +5,15 @@ var library = require('./library'),
     response = require('./res');
 
 exports.index = async (req, res) => {
-    var apikey = req.body.apikey;
+    var apikey = (req.body.apikey) ? req.body.apikey : req.query.apikey;
     if (apikey === process.env.APIKEY) {
-        var from = req.body.from,
-            to = req.body.to,
-            subject = req.body.subject,
-            text = req.body.text,
-            html = req.body.html,
-            filename = req.body.filename,
-            fileurl = req.body.fileurl,
+        var from = (req.body.from) ? req.body.from : req.query.from,
+            to = (req.body.to) ? req.body.to : req.query.to,
+            subject = (req.body.subject) ? req.body.subject : req.query.subject,
+            text = (req.body.text) ? req.body.text : req.query.text,
+            html = (req.body.html) ? req.body.html : req.query.html,
+            filename = (req.body.filename) ? req.body.filename : req.query.filename,
+            fileurl = (req.body.fileurl) ? req.body.fileurl : req.query.fileurl,
             attachment = {};
 
         if (filename && fileurl) {

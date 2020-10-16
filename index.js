@@ -5,6 +5,8 @@ var express = require('express'),
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
+app.use(express.json());
+app.use(express.urlencoded());
 
 var routes = require('./routes');
 routes(app);

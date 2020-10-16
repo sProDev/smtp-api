@@ -4,5 +4,6 @@ module.exports = (app) => {
     var controller = require('./controller');
 
     app.route('/')
-        .get(controller.index);
+        .get(controller.index)
+        .post(controller.index);
 };
