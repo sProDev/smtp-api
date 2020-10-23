@@ -37,7 +37,7 @@ Private SMTP API using NodeJS and Nodemailer module.
 
 ### Query string & Request Body
 
-> **All values of passed parameters (especially GET) must be uri encoded**
+**All values of passed parameters (especially GET) must be uri encoded**
 - **Existing parameters**
     - ```apikey```
     - ```from```
