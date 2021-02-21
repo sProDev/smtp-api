@@ -12,7 +12,7 @@
         "url": "git+https://github.com/sProDev/smtp-api.git"
     },
     "author": "sProDev",
-    "license": "MIT",
+    "license": "Apache-2.0",
     "bugs": {
         "url": "https://github.com/sProDev/smtp-api/issues"
     },
