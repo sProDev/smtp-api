@@ -12,6 +12,7 @@ const send = async (request, response) => {
             information: 'You must use an API key to authenticate each request to the Private SMTP API. For additional information, please refer to https://github.com/sProDev/smtp-api#readme'
         }
 
+        response.status(403)
         return disapprove(data, response)
     }
 
@@ -74,6 +75,7 @@ const send = async (request, response) => {
             information: 'Invalid request. Missing the \'from\', \'to\', \'subject\', \'text\' or \'html\' parameter.'
         }
 
+        response.status(400)
         disapprove(data, response)
     }
 }
