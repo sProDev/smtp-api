@@ -1,73 +1,112 @@
 # SMTP-API
-Private SMTP API using NodeJS and Nodemailer module.
+
+Private SMTP API using NodeJS and [Nodemailer](https://nodemailer.com/) module.
+
 > Deploy on Serverless Service [Vercel](https://vercel.com).
 
-#### Requirements
-- [NodeJS (and npm)](https://nodejs.org/en/)
-- [Vercel CLI](https://vercel.com/download)
+## Requirements
 
-#### References
+- [NodeJS (and npm)](https://nodejs.org/en/)
+- [Vercel CLI](https://vercel.com/download) to deploy this
+
+## References
+
 - [Express Documentation](http://expressjs.com/en/starter/hello-world.html)
 - [Nodemailer SMTP Transport](https://nodemailer.com/smtp/)
 
-### How to Install
+## Installation
+
 1. Clone this repository
     ```
     git clone https://github.com/sProDev/smtp-api.git
     ```
+
 2. Change the current working directory to this repository folder
     ```
     cd smtp-api
     ```
+
 3. Install all modules listed as dependencies in package.json
     ```
-    npm install
+    npm i --save
     ```
-4. Rename ```example.env``` to an ```.env``` file then adjust it to your SMTP server configuration, don't forget to also go to the APIKEY section (it's up to you, make sure it's confidential).
+
+4. Rename the file `example.env` to` .env` and adjust any configuration as needed.<br>
+   Enter anything in `APIKEY` as long as you remember it, and make sure no one knows your API Key
+   
 5. Run the server (locally)
-    
     - Development mode
         ```
         npm run dev
         ```
+
     - Production mode
         ```
         npm run start
         ```
 
-### Query string & Request Body
+## Query String & Request Body
 
-**All values of passed parameters (especially GET) must be uri encoded**
-- **Existing parameters**
-    - ```apikey```
-    - ```from```
-    - ```to```
-    - ```subject```
-    - ```text```
-    - ```html```
-    - ```filename```
-    - ```fileurl```
-- **Required parameters**
-    - ```apikey```
-    - ```from```
-    - ```to```
-    - ```subject```
-    - ```text``` or ```html```
+All values of passed parameters (especially GET) must be uri encoded
 
-### Example of use (Direct link)
+| Query/Body | Description                                           | Required?                   |
+| ---------- | ----------------------------------------------------- | --------------------------- |
+| `apikey`   | API key to allow clients to send email using your API | `Yes`                       |
+| `from`     | Where did this email come from                        | `Yes`                       |
+| `to`       | Where will this email be sent?                        | `Yes`                       |
+| `subject`  | Subject for this email                                | `Yes`                       |
+| `text`     | The content of this email (plain text)                | `Yes` if `html` is not used |
+| `html`     | Content for this email (supports HTML)                | `Yes` if `text` is not used |
+| `filename` | File name displayed (if there is a file attachment)   | `No`                        |
+| `fileurl`  | The url of the file to attach                         | `No`                        |
 
-**1. Send email messages (plain text)**
-> http:\/\/localhost:3000\/?apikey=```APIKEY```&from=```SENDER```&to=```RECEIVER```&subject=```SUBJECT```&text=```COMPLETE YOUR MESSAGE HERE```
+## Example of Use
 
-**2. Send email messages (html content)**
-> http:\/\/localhost:3000\/?apikey=```APIKEY```&from=```SENDER```&to=```RECEIVER```&subject=```SUBJECT```&html=```COMPLETE YOUR HTML MESSAGE HERE```
+### Request
 
-**3. Send email messages (with file attached)**
-> http:\/\/localhost:3000\/?apikey=```APIKEY```&from=```SENDER```&to=```RECEIVER```&subject=```SUBJECT```&(text/html)=```COMPLETE YOUR MESSAGE HERE```&filename=```FILENAME (WITH EXTENSION)```&fileurl=```FILEURL```
+```curl
+curl -XPOST -d 'apikey=verySecret098@&from=no-reply@example.com&to=sprodev@github.com&subject=Hello there!&text=Haha, this is just a test email, you don't need to reply to this email&filename=LICENSE&fileurl=https://raw.githubusercontent.com/sProDev/smtp-api/main/LICENSE' 'http://localhost:3000'
+```
+
+### Response
+
+```json
+{
+    "success": true,
+    "message": "success",
+    "data": {
+        "accepted": [
+            "sprodev@github.com"
+        ],
+        "rejected": [],
+        "envelopeTime": 1234,
+        "messageTime": 4321,
+        "messageSize": 321,
+        "response": "250 OK id=1aBcd2-0001Ab-AB",
+        "envelope": {
+            "from": "no-reply@example.com",
+            "to": [
+                "sprodev@github.com"
+            ]
+        },
+        "messageId": "<1234567a-1a23-a1b2-123a-123ab4cdefg5@example.com>"
+    }
+}
+```
 
 ## Support Me
+
 ### Global
+
 [![ko-fi](https://www.ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/sProDev)
+
 ### Indonesia
+
 - [Trakteer](https://trakteer.id/sProDev)
 - [Saweria](https://saweria.co/sProDev)
+
+## Additional Information
+
+### License
+
+Code licensed under [MIT License](https://github.com/sProDev/smtp-api/blob/main/LICENSE)
