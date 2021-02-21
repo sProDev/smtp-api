@@ -109,4 +109,4 @@ curl -XPOST -d 'apikey=verySecret098@&from=no-reply@example.com&to=sprodev@githu
 
 ### License
 
-Code licensed under [MIT License](https://github.com/sProDev/smtp-api/blob/main/LICENSE).
+Code licensed under [Apache 2.0 License](https://github.com/sProDev/smtp-api/blob/main/LICENSE).
