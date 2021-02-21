@@ -31,7 +31,7 @@ Private SMTP API using NodeJS and [Nodemailer](https://nodemailer.com/) module.
     npm i --save
     ```
 
-4. Rename the file `example.env` to` .env` and adjust any configuration as needed.<br>
+4. Rename the file `example.env` to `.env` and adjust any configuration as needed.<br>
    Enter anything in `APIKEY` as long as you remember it, and make sure no one knows your API Key
    
 5. Run the server (locally)
