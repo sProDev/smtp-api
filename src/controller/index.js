@@ -9,7 +9,7 @@ const send = async (request, response) => {
 
     if (apiKey !== process.env.APIKEY) {
         let data = {
-            information: 'You must use an API key to authenticate each request to the Private SMTP API. For additional information, please refer to https://github.com/sProDev/smtp-api#readme'
+            information: 'You must use an API key to authenticate each request to the Private SMTP API. For additional information, please refer to https://github.com/sooluh/smtp-api#readme'
         }
 
         response.status(403)

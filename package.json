@@ -9,14 +9,14 @@
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/sProDev/smtp-api.git"
+        "url": "git+https://github.com/sooluh/smtp-api.git"
     },
-    "author": "sProDev",
+    "author": "sooluh",
     "license": "Apache-2.0",
     "bugs": {
-        "url": "https://github.com/sProDev/smtp-api/issues"
+        "url": "https://github.com/sooluh/smtp-api/issues"
     },
-    "homepage": "https://github.com/sProDev/smtp-api#readme",
+    "homepage": "https://github.com/sooluh/smtp-api#readme",
     "dependencies": {
         "body-parser": "^1.19.0",
         "dotenv": "^8.2.0",

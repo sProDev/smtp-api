@@ -18,7 +18,7 @@ Private SMTP API using NodeJS and [Nodemailer](https://nodemailer.com/) module.
 
 1. Clone this repository
     ```
-    git clone https://github.com/sProDev/smtp-api.git
+    git clone https://github.com/sooluh/smtp-api.git
     ```
 
 2. Change the current working directory to this repository folder
@@ -65,7 +65,7 @@ All values of passed parameters (especially GET) must be uri encoded
 ### Request
 
 ```curl
-curl -XPOST -d 'apikey=verySecret098@&from=no-reply@example.com&to=sprodev@github.com&subject=Hello there!&text=Haha, this is just a test email, you don't need to reply to this email&filename=LICENSE&fileurl=https://raw.githubusercontent.com/sProDev/smtp-api/main/LICENSE' 'http://localhost:3000'
+curl -XPOST -d 'apikey=verySecret098@&from=no-reply@example.com&to=sooluh@github.com&subject=Hello there!&text=Haha, this is just a test email, you don't need to reply to this email&filename=LICENSE&fileurl=https://raw.githubusercontent.com/sooluh/smtp-api/main/LICENSE' 'http://localhost:3000'
 ```
 
 ### Response
@@ -76,7 +76,7 @@ curl -XPOST -d 'apikey=verySecret098@&from=no-reply@example.com&to=sprodev@githu
     "message": "success",
     "data": {
         "accepted": [
-            "sprodev@github.com"
+            "sooluh@github.com"
         ],
         "rejected": [],
         "envelopeTime": 1234,
@@ -86,7 +86,7 @@ curl -XPOST -d 'apikey=verySecret098@&from=no-reply@example.com&to=sprodev@githu
         "envelope": {
             "from": "no-reply@example.com",
             "to": [
-                "sprodev@github.com"
+                "sooluh@github.com"
             ]
         },
         "messageId": "<1234567a-1a23-a1b2-123a-123ab4cdefg5@example.com>"
@@ -98,15 +98,15 @@ curl -XPOST -d 'apikey=verySecret098@&from=no-reply@example.com&to=sprodev@githu
 
 ### Global
 
-[![ko-fi](https://www.ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/sProDev)
+[![ko-fi](https://www.ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/sooluh)
 
 ### Indonesia
 
-- [Trakteer](https://trakteer.id/sProDev)
-- [Saweria](https://saweria.co/sProDev)
+- [Trakteer](https://trakteer.id/sooluh)
+- [Saweria](https://saweria.co/sooluh)
 
 ## Additional Information
 
 ### License
 
-Code licensed under [Apache 2.0 License](https://github.com/sProDev/smtp-api/blob/main/LICENSE).
+Code licensed under [Apache 2.0 License](https://github.com/sooluh/smtp-api/blob/main/LICENSE).
