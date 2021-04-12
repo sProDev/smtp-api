@@ -1,11 +1,14 @@
-require('dotenv').config({ path: __dirname + '/../.env' })
+require("dotenv").config({ path: __dirname + "/../.env" })
 
-const app = require('express')()
-const { urlencoded, json } = require('body-parser')
+const express = require("express")
+const app = express()
+const { urlencoded, json } = require("body-parser")
+const cors = require("cors")
 
 const port = process.env.PORT || 3000
-const routes = require('./routes')
+const routes = require("./routes")
 
+app.use(cors())
 app.use(urlencoded({
     extended: true
 }))

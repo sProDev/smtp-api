@@ -1,5 +1,5 @@
-const nodemailer = require('nodemailer')
-const { isEmptyObject, empty } = require('./../helper')
+const nodemailer = require("nodemailer")
+const { isEmptyObject, empty } = require("./../helper")
 
 let transport = nodemailer.createTransport({
     host: process.env.SMTP_HOST,
@@ -10,7 +10,7 @@ let transport = nodemailer.createTransport({
     }
 })
 
-module.exports = (from, to, subject, text = '', html = '', attachment = {}) => {
+module.exports = (from, to, subject, text = "", html = "", attachment = {}) => {
     return new Promise((resolve, reject) => {
 
         let message = {

@@ -1,14 +1,14 @@
-const { send, pnf } = require('./../controller')
+const { send, pnf } = require("./../controller")
 
 module.exports = (app) => {
 
     // default route
-    app.route('/')
+    app.route("/")
         .get(send)
         .post(send)
 
     // route not found
-    app.route('*')
+    app.route("*")
         .all(pnf)
 
 }
